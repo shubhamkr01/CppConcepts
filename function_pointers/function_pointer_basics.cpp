@@ -21,6 +21,6 @@ int main() {
     
     fxnPtr = bar; // assignment type 2
     fxnPtr(3, 7); //calling type 2: implicit dereference 
-
-	return 0;
+    
+    return 0;
 }
