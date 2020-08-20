@@ -23,8 +23,8 @@ struct Customer {
 		fullname = "";
 		payment = 0.0;
 	}
-    string fullname;
-    double payment;
+        string fullname;
+        double payment;
 };
 
 class Stack {
@@ -42,7 +42,7 @@ public:
 };
 
 Stack::Stack() { //create an empty stack
-    top = -1;
+        top = -1;
 }
 
 bool Stack::isFull() const {
@@ -65,7 +65,7 @@ bool Stack::push(const Customer& c) {
 	    return false; 
 	}
 	customers[++top] = c;
-    return true;
+        return true;
 }
 
 //function needs error checking mechanism
@@ -73,7 +73,7 @@ void Stack::topElement(Customer& c) {
 	if(isEmpty()) {
 		throw "Stack is empty";
 	}
-    c = customers[top];	
+        c = customers[top];	
 }
 
 bool Stack::pop() {
@@ -110,31 +110,31 @@ bool removeFromStack(Stack& customers_stack) {
 int main(int argc, char const *argv[]) {
 	Stack customers_stack;
 	
-    Customer one, two, three, four;
+        Customer one, two, three, four;
     
-    one.fullname = "Tim Cook";
-    one.payment = 78.8;
+        one.fullname = "Tim Cook";
+        one.payment = 78.8;
 
-    two.fullname = "Richard Martin";
-    two.payment = 52.5;
+        two.fullname = "Richard Martin";
+        two.payment = 52.5;
 
-    three.fullname = "Abra ka Dabra";
-    three.payment = 75.6;
+        three.fullname = "Abra ka Dabra";
+        three.payment = 75.6;
 
-    four.fullname = "Kumar Sangakara";
-    four.payment = 32.9;
-
-    customers_stack.push(one);
-    customers_stack.push(two);
-    customers_stack.push(three);
-    customers_stack.push(four);
-
-    removeFromStack(customers_stack);
-    removeFromStack(customers_stack);
-    removeFromStack(customers_stack);
-    removeFromStack(customers_stack);
+        four.fullname = "Kumar Sangakara";
+        four.payment = 32.9;
     
-    removeFromStack(customers_stack);// try to remove from empty stack
+        customers_stack.push(one);
+        customers_stack.push(two);
+        customers_stack.push(three);
+        customers_stack.push(four);
+    
+        removeFromStack(customers_stack);
+        removeFromStack(customers_stack);
+        removeFromStack(customers_stack);
+        removeFromStack(customers_stack);
+    
+        removeFromStack(customers_stack);// try to remove from empty stack
 
 	return 0;
 }
