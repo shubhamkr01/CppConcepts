@@ -12,44 +12,44 @@ Note: hours need not be restricted to 24
 using namespace std;
 
 class Time {
-	  int hours;
-	  int minutes;
+    int hours;
+    int minutes;
 public:
     //constructors
-	  Time();
-	  Time(int h, int m = 0);
+    Time();
+    Time(int h, int m = 0);
     
     //other member functions
-	  void addMinutes(int m);
-	  void addHours(int h);
-	  void timerReset();
-	  void display() const;
+    void addMinutes(int m);
+    void addHours(int h);
+    void timerReset();
+    void display() const;
     
     //operator overloading
-	  Time operator+(const Time& t) const;
-	  Time operator-(const Time& t) const;
-	  Time operator*(int a) const;
+    Time operator+(const Time& t) const;
+    Time operator-(const Time& t) const;
+    Time operator*(int a) const;
 
     friend ostream& operator<<(ostream& os, const Time& t);
 };
 
 Time::Time() {
-	  hours = minutes = 0;
+    hours = minutes = 0;
 }
 
 Time::Time(int h, int m) {
-	  hours = h;
-	  minutes = m;
+    hours = h;
+    minutes = m;
 }
 
 void Time::addMinutes(int m) {
-	  minutes += m;
-	  hours += minutes/60;
-	  minutes %= 60;
+    minutes += m;
+    hours += minutes/60;
+    minutes %= 60;
 }
 
 void Time::addHours(int h) {
-	  hours += h;
+    hours += h;
 }
 
 void Time::timerReset() {
@@ -57,7 +57,7 @@ void Time::timerReset() {
 }
 
 Time Time::operator+(const Time& t) const {
-	  Time sum;
+    Time sum;
     sum.hours = hours + t.hours;
     sum.minutes = minutes + t.minutes;
     sum.hours += sum.minutes/60;
@@ -89,7 +89,7 @@ void Time::display() const {
 
 ostream& operator<<(ostream& os, const Time& t) {
     os << t.hours << ":" << t.minutes;
-	  return os;
+    return os;
 }
 
 int main(int argc, char const *argv[]) {
@@ -125,7 +125,7 @@ int main(int argc, char const *argv[]) {
     t4 = t4 * 2;
     cout <<"After mul t4: " << t4 << endl;
     
-	  return 0;
+    return 0;
 }
 
 
